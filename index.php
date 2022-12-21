@@ -1,7 +1,10 @@
 <?php
+session_start();
 include_once __DIR__ . "/utilities.php";
 if (isset($_GET["password"])) {
-    var_dump(generatePassword($_GET["password"]));
+    $_SESSION["newPassword"] = $_GET["password"];
+    header("Location: showPassword.php");
+   
 }
 ?>
 
